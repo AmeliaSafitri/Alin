@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>ALJABAR MATRIKS &#8212; My sample book</title>
   
   
   
@@ -365,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>ALJABAR MATRIKS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,9 +374,24 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-matrik-penjumlahan-perkalian-pengurangan-transpose">Operasi matrik (penjumlahan, perkalian, pengurangan, transpose)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-matrik">Penjumlahan Matrik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-matriks">Pengurangan Matriks</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align-a-b-begin-bmatrix-2-3-4-1-0-7-end-bmatrix">\begin{align*}
+A-B&amp;=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matrik">Perkalian Matrik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar-matriks">Perkalian Skalar Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-matriks">Transpose Matriks</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -387,32 +402,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>##Aljabar Matrik
-Tidak mengerjakan tidak boleh masuk</p>
-<ul class="simple">
-<li><p>Berikan penjelasan tentang apa itu matrik</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="aljabar-matriks">
+<h1>ALJABAR MATRIKS<a class="headerlink" href="#aljabar-matriks" title="Link to this heading">#</a></h1>
 <p>Matriks adalah sekumpulan bilangan yang disusun berdasarkan baris dan kolom, serta ditempatkan di dalam tanda kurung. Bilangan-bilangan yang membentuk suatu matriks disebut sebagai elemen-elemen matriks. Matriks digunakan untuk menyederhanakan penyampaian data, sehingga mudah untuk diolah</p>
-<p>Matrik A dan C = m x n
-Matrik B = n x k</p>
+<section id="operasi-matrik-penjumlahan-perkalian-pengurangan-transpose">
+<h2>Operasi matrik (penjumlahan, perkalian, pengurangan, transpose)<a class="headerlink" href="#operasi-matrik-penjumlahan-perkalian-pengurangan-transpose" title="Link to this heading">#</a></h2>
+<section id="penjumlahan-matrik">
+<h3>Penjumlahan Matrik<a class="headerlink" href="#penjumlahan-matrik" title="Link to this heading">#</a></h3>
+<p>Syarat Penjumlahan Matriks:</p>
 <ul class="simple">
-<li><p>Operasi matrik (penjumlahan, perkalian, pengurangan, tranpose)</p></li>
+<li><p>Dua matriks dapat dijumlahkan jika jumlah baris dan kolomnya sama</p></li>
+<li><p>Matriks hasil penjumlahan juga akan memiliki ordo yang sama.
+\begin{align*}
+A=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+6&amp;2&amp;-4\
+3&amp;5&amp;2
+\end{bmatrix}
+\end{align*}</p></li>
 </ul>
-<p>penjumlahan dan pengurangan matriks yaitu : jika terdapat dua matriks, misal matriks A dan B, yang memiliki ordo sama, maka elemen-elemen yang seletak dapat dijumlahkan atau dikurangkan. Jumlah matriks A dan matriks B dapat dinyatakan dengan A+B, sedangkan selisih matriks A dan matriks B dapat dinyatakan dengan A – B. Untuk mencari hasil kali matriks A dengan matriks B ialah dengan mengalikan elemen pada baris-baris matriks A dengan elemen pada kolom-kolom matriks B, kemudian jumlahkan hasil perkalian antara baris dan kolom tersebut. Berbeda dengan perkalian skalar yang hanya mengalikan setiap elemen matriks dengan bilangan skalar, perkalian dua matriks memiliki aturan tersendiri.  Syarat dua buah matriks, misal matriks A dan matriks B, dapat dikalikan adalah jika banyaknya kolom matriks A sama dengan banyaknya baris matriks B. Transpose suatu matriks, misal matriks A, yang dilambangkan dengan At adalah sebuah matriks yang disusun dengan cara menukarkan baris matriks A menjadi kolom matriks At dan kolom matriks A menjadi baris matriks At.</p>
-<p>Perkalian matrik A, B, C, dan c skalar adalah sebagai berikut:</p>
-<ul class="simple">
-<li><p>A(BC)= (AB)C</p></li>
-<li><p>c(AB)= (cA)B=(cB)A</p></li>
-<li><p>A (B+C) = AB+ AC</p></li>
-<li><p>(B+C)A = BA + CA</p></li>
-<li><p>Buat program untuk mengalikan matrik A dan B (menggunakan for)</p></li>
-<li><p>List item</p></li>
-</ul>
+<p>\begin{align*}
+A+B&amp;=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}
++
+\begin{bmatrix}
+6&amp;2&amp;-4\
+3&amp;5&amp;2
+\end{bmatrix}\
+&amp;=
+\begin{bmatrix}
+2+6&amp;-3+2&amp;4+(-4)\
+1+3&amp;0+5&amp;-7+2
+\end{bmatrix}
+=\begin{bmatrix}
+8&amp;-1&amp;0\
+4&amp;5&amp;-5
+\end{bmatrix}
+\end{align*}</p>
+<p>Pada bagian ini terdapat matriks A (ordo 2x3) dan B (ordo 2x3). Cara untuk menjumlahkan matriks tersebut yaitu dengan cara:
+\begin{align*}
+A=
+\begin{bmatrix}
+a&amp;b&amp;c\
+d&amp;e&amp;f
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+g&amp;h&amp;i\
+j&amp;k&amp;l
+\end{bmatrix}
+\end{align*}</p>
+<p>A+B=
+\begin{bmatrix}
+a+g&amp;b+h&amp;c+i\
+\end{bmatrix}
+\begin{bmatrix}
+d+j&amp;e+k&amp;f+l
+\end{bmatrix}</p>
+<p>Berikut program yang digunakan untuk menjumlahkan matrik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Operasi Matrik</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
 
 <span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -426,47 +486,440 @@ Matrik B = n x k</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A+B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B+A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="n">A</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil A+B = B+A (KOMUTATIF)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=
+ [[ 1 -4  3]
+ [ 6  9  2]
+ [ 6  3  1]]
+B=
+ [[ 9 -1  3]
+ [ 6  4  1]
+ [ 2 -2  1]]
+C=
+ [[ 8  4]
+ [-3  1]
+ [ 7  4]]
+A+B=
+ [[10 -5  6]
+ [12 13  3]
+ [ 8  1  2]]
+B+A=
+ [[10 -5  6]
+ [12 13  3]
+ [ 8  1  2]]
+Hasil A+B = B+A (KOMUTATIF)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pengurangan-matriks">
+<h3>Pengurangan Matriks<a class="headerlink" href="#pengurangan-matriks" title="Link to this heading">#</a></h3>
+<p>Syarat utama untuk melakukan pengurangan matriks adalah :</p>
+<ul class="simple">
+<li><p>Dua atau lebih matriks dapat dikurangkan jika memiliki nilai ordo yang sama.</p></li>
+<li><p>Matriks hasil pengurangan juga akan memiliki ordo yang sama.
+\begin{align*}
+A=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+6&amp;2&amp;-4\
+3&amp;5&amp;2
+\end{bmatrix}
+\end{align*}</p></li>
+</ul>
+</section>
+</section>
+<section id="begin-align-a-b-begin-bmatrix-2-3-4-1-0-7-end-bmatrix">
+<h2>\begin{align*}
+A-B&amp;=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}<a class="headerlink" href="#begin-align-a-b-begin-bmatrix-2-3-4-1-0-7-end-bmatrix" title="Link to this heading">#</a></h2>
+<p>\begin{bmatrix}
+6&amp;2&amp;-4\
+3&amp;5&amp;2
+\end{bmatrix}\
+&amp;=
+\begin{bmatrix}
+2-6&amp;-3-2&amp;4-(-4)\
+1-3&amp;0-5&amp;-7-2
+\end{bmatrix}
+=\begin{bmatrix}
+-4&amp;-5&amp;8\
+-2&amp;-5&amp;-9
+\end{bmatrix}
+\end{align*}</p>
+<p>Pada bagian ini terdapat matriks A (ordo 2x3) dan B (ordo 2x3). Cara untuk mengurangi matriks tersebut yaitu dengan cara:
+\begin{align*}
+A=
+\begin{bmatrix}
+a&amp;b&amp;c\
+d&amp;e&amp;f
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+g&amp;h&amp;i\
+j&amp;k&amp;l
+\end{bmatrix}
+\end{align*}</p>
+<p>A-B=
+\begin{bmatrix}
+a-g&amp;b-h&amp;c-i\
+\end{bmatrix}
+\begin{bmatrix}
+d-j&amp;e-k&amp;f-l
+\end{bmatrix}</p>
+<p>Berikut program yang digunakan untuk menjumlahkan matrik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 
 <span class="c1">#Pengurangan Matrik</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A-B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B-A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="o">-</span><span class="n">A</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil A-B = B-A (BUKAN KOMUTATIF)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=
+ [[ 1 -4  3]
+ [ 6  9  2]
+ [ 6  3  1]]
+B=
+ [[ 9 -1  3]
+ [ 6  4  1]
+ [ 2 -2  1]]
+C=
+ [[ 8  4]
+ [-3  1]
+ [ 7  4]]
+A-B=
+ [[-8 -3  0]
+ [ 0  5  1]
+ [ 4  5  0]]
+B-A=
+ [[ 8  3  0]
+ [ 0 -5 -1]
+ [-4 -5  0]]
+Hasil A-B = B-A (BUKAN KOMUTATIF)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="perkalian-matrik">
+<h3>Perkalian Matrik<a class="headerlink" href="#perkalian-matrik" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Untuk melakukan perkalian matriks, mengalikan setiap baris dari matriks pertama dengan setiap kolom dari matriks kedua, kemudian menjumlahkan hasilnya.</p></li>
+<li><p>Syarat utama untuk perkalian matriks adalah jumlah kolom matriks pertama harus sama dengan jumlah baris matriks kedua.
+\begin{align*}
+A=
+\begin{bmatrix}
+2&amp;3\
+1&amp;4\
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+3&amp;5\
+2&amp;1\
+\end{bmatrix}
+\end{align*}</p></li>
+</ul>
+<p>\begin{equation*}
+A X B =
+\end{equation*}
+\begin{bmatrix}
+2<em>3 + 3</em>2 &amp; 2<em>5 + 3</em>1\
+\end{bmatrix}
+\begin{bmatrix}
+1<em>3 + 4</em>2 &amp; 1<em>5 + 4</em>1
+\end{bmatrix}</p>
+<p>\begin{equation*}
+A X B =
+\end{equation*}
+\begin{bmatrix}
+6 + 6 &amp; 10 + 3\
+\end{bmatrix}
+\begin{bmatrix}
+3 + 8 &amp; 5 + 4
+\end{bmatrix}</p>
+<p>\begin{equation*}
+A X B =
+\end{equation*}
+\begin{bmatrix}
+12 &amp; 13\
+\end{bmatrix}
+\begin{bmatrix}
+11 &amp; 9
+\end{bmatrix}</p>
+<p>Pada bagian ini terdapat matriks A (ordo 2x2) dan B (ordo 2x2). Cara untuk mengalikan matriks tersebut yaitu dengan cara:
+\begin{align*}
+A=
+\begin{bmatrix}
+a&amp;b\
+c&amp;d\
+\end{bmatrix}
+&amp;&amp;
+B=
+\begin{bmatrix}
+e&amp;f\
+g&amp;h\
+\end{bmatrix}
+\end{align*}</p>
+<p>\begin{equation*}
+A X B =
+\end{equation*}
+\begin{bmatrix}
+a<em>e + b</em>g &amp; a<em>f + b</em>h\
+\end{bmatrix}
+\begin{bmatrix}
+c<em>e + d</em>g &amp; c<em>f + d</em>h
+\end{bmatrix}</p>
+<p>Berikut program yang digunakan untuk mengalikan suatu matrik dengan menggunakan for:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Buat program untuk mengalikan matrik A dan B (menggunakan for)</span>
+<span class="c1"># Matriks A dan B (contoh)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
 
+<span class="c1"># Inisialisasi matriks hasil</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Perkalian matriks menggunakan nested for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Baris baru pada matriks hasil</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Elemen baru pada baris hasil</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="n">product</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>  <span class="c1"># Menambahkan hasil perkalian ke baris baru</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>  <span class="c1"># Menambahkan baris baru ke hasil akhir</span>
+
+<span class="c1"># Menampilkan hasil perkalian matriks</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[99, 30, 75]
+[33, 10, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Membuat program dalam mengalikan matriks juga dapat dilakukan dengan menggunakan numpy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 <span class="c1">#Perkalian Matrik</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AB=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AC=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="nd">@C</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BC=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="nd">@C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=
+ [[ 1 -4  3]
+ [ 6  9  2]
+ [ 6  3  1]]
+B=
+ [[ 9 -1  3]
+ [ 6  4  1]
+ [ 2 -2  1]]
+C=
+ [[ 8  4]
+ [-3  1]
+ [ 7  4]]
+AB=
+ [[ -9 -23   2]
+ [112  26  29]
+ [ 74   4  22]]
+AC=
+ [[41 12]
+ [35 41]
+ [46 31]]
+BC=
+ [[96 47]
+ [43 32]
+ [29 10]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perbedaan program yang menggunakan for dan numpy terletak pada cara pembuatan programnya. Pada program yang menggunakan numpy lebih mudah dikarenakan program tersebut akan langsung menjalankan perintah dari user. Sebagai contoh pada perkalian matriks tersebut terdapat tanda (&#64;) disimbolkan sebagai tanda ‘perkalian’ sehingga ketika program dijalankan akan langsung mengalikan matriks tersebut.</p>
+<p>Sedangkan program yang menggunakan for dapat dilihat bahwa dalam membuat programnya lebih rumit dan lebih banyak, dikarenakan program yang dibuat terdapat langkah-langkah yang harus dilakukan satu per satu. Seperti contoh pada program for (perkalian) yang dimana program tersebut harus menambahkan hasil perkalian ke baris baru, menambahkan baris baru ke hasil akhir, yang tentunya juga membutuhkan waktu lama dalam membuat programnya. Sehingga kesimpulannya yaitu dalam penggunaan numpy dalam membuat suatu program lebih efisien dikarenakan pembuatannya yang lebih mudah dan juga memerlukan waktu yang singkat</p>
+</section>
+<section id="perkalian-skalar-matriks">
+<h3>Perkalian Skalar Matriks<a class="headerlink" href="#perkalian-skalar-matriks" title="Link to this heading">#</a></h3>
+<p>Perkalian skalar matriks adalah operasi matematika yang melibatkan mengalikan setiap elemen dalam suatu matriks dengan sebuah skalar (konstanta).</p>
+<ul class="simple">
+<li><p>Jika memiliki matriks A dan sebuah skalar C, maka hasil perkalian skalar matriks A dengan C adalah matriks yang elemen-elemennya diperoleh dengan mengalikan setiap elemen matriks A dengan C.
+\begin{equation*}
+A=
+\begin{bmatrix}
+2&amp;8\
+-3&amp;5\0&amp;1
+\end{bmatrix}
+\end{equation*}</p></li>
+</ul>
+<p>\begin{equation*}
+C=7
+\end{equation*}</p>
+<p>\begin{equation*}
+CA=
+7\begin{bmatrix}2&amp;8-3&amp;5\0&amp;1\end{bmatrix}=
+\begin{bmatrix}7(2)&amp;7(8)\7(-3)&amp;7(5)\7(0)&amp;7(1)\end{bmatrix}=
+\begin{bmatrix}14&amp;56-21&amp;35\0&amp;7\end{bmatrix}
+\end{equation*}</p>
+<p>Pada bagian ini terdapat matriks A (ordo 3X2) dan C=7. Cara untuk mengalikannya yaitu dengan cara:
+\begin{equation*}
+A=
+\begin{bmatrix}
+a&amp;b\
+c&amp;d\e&amp;f
+\end{bmatrix}
+\end{equation*}</p>
+<p>\begin{equation*}
+C=7
+\end{equation*}</p>
+<p>\begin{equation*}
+CA=
+7\begin{bmatrix}a&amp;b\c&amp;d\e&amp;f\end{bmatrix}=
+\begin{bmatrix}7(a)&amp;7(b)\7(c)&amp;7(d)\7(e)&amp;7(f)\end{bmatrix}
+\end{equation*}</p>
+<p>Berikut program yang digunakan untuk mengalikan suatu matrik dengan skalar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
 
-<span class="c1">#Sifat Asosiasi</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A(BC) =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="o">@</span><span class="p">(</span><span class="n">B</span><span class="nd">@C</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(AB)C =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,(</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span><span class="nd">@C</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hasil A(BC)=(AB)C&#39;</span><span class="p">)</span>
-
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 <span class="c1">#Perkalian Skalar</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c(AB)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="nd">@B</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(cA)B</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,(</span><span class="n">c</span><span class="o">*</span><span class="n">A</span><span class="p">)</span><span class="nd">@B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A(cB)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="o">@</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">B</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil c(AB) = (cA)B = A(cB)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=
+ [[ 1 -4  3]
+ [ 6  9  2]
+ [ 6  3  1]]
+B=
+ [[ 9 -1  3]
+ [ 6  4  1]
+ [ 2 -2  1]]
+C=
+ [[ 8  4]
+ [-3  1]
+ [ 7  4]]
+c(AB)
+ [[ -63 -161   14]
+ [ 784  182  203]
+ [ 518   28  154]]
+(cA)B
+ [[ -63 -161   14]
+ [ 784  182  203]
+ [ 518   28  154]]
+A(cB)
+ [[ -63 -161   14]
+ [ 784  182  203]
+ [ 518   28  154]]
+Hasil c(AB) = (cA)B = A(cB)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="transpose-matriks">
+<h3>Transpose Matriks<a class="headerlink" href="#transpose-matriks" title="Link to this heading">#</a></h3>
+<p>Transpose matriks adalah operasi matematika yang menghasilkan matriks baru dengan menukar elemen-elemen baris menjadi elemen kolom atau sebaliknya</p>
+<p>\begin{equation*}
+D=
+\begin{bmatrix}
+3&amp;7&amp;2&amp;-3\
+-1&amp;4&amp;2&amp;8\
+0&amp;3&amp;-2&amp;5
+\end{bmatrix}.
+\end{equation*}</p>
+<p>\begin{equation*}
+Dt=
+\begin{bmatrix}
+3&amp;-1&amp;0\
+7&amp;4&amp;3\
+2&amp;2&amp;-2\
+-3&amp;8&amp;5
+\end{bmatrix}
+\end{equation*}</p>
+<p>Berikut penjelasannya:
+\begin{equation*}
+D=
+\begin{bmatrix}
+a&amp;b&amp;c&amp;d\
+e&amp;f&amp;g&amp;h\
+i&amp;j&amp;k&amp;l
+\end{bmatrix}
+\end{equation*}</p>
+<p>\begin{equation*}
+Dt=
+\begin{bmatrix}
+a&amp;e&amp;i\
+b&amp;f&amp;j\
+c&amp;g&amp;k\
+d&amp;h&amp;l
+\end{bmatrix}
+\end{equation*}</p>
+<p>Berikut program yang digunakan untuk mentranspose suatu matrik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
 
-<span class="c1">#Perkalian Identitas</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AI=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="nd">@i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;IA=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">i</span><span class="nd">@A</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil AI = IA = A&#39;</span><span class="p">)</span>
-
-<span class="c1">#Perkalian Nol</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A0=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;0A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil A0 = 0A = A&#39;</span><span class="p">)</span>
-
-<span class="c1">#Tidak Berlaku Sifat Komutatif</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AB=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BA=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="nd">@A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil AB != BA atau AB tidak sama dengan BA&#39;</span><span class="p">)</span>
-
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 <span class="c1">#Tranpose Matrik</span>
 <span class="n">C_trans</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;matrik c sebelum di transpose=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
@@ -494,93 +947,6 @@ C=
  [[ 8  4]
  [-3  1]
  [ 7  4]]
-A+B=
- [[10 -5  6]
- [12 13  3]
- [ 8  1  2]]
-B+A=
- [[10 -5  6]
- [12 13  3]
- [ 8  1  2]]
-Hasil A+B = B+A (KOMUTATIF)
-A-B=
- [[-8 -3  0]
- [ 0  5  1]
- [ 4  5  0]]
-B-A=
- [[ 8  3  0]
- [ 0 -5 -1]
- [-4 -5  0]]
-Hasil A-B = B-A (BUKAN KOMUTATIF)
-AB=
- [[ -9 -23   2]
- [112  26  29]
- [ 74   4  22]]
-AC=
- [[41 12]
- [35 41]
- [46 31]]
-BC=
- [[96 47]
- [43 32]
- [29 10]]
-A(BC) =
- [[  11  -51]
- [1021  590]
- [ 734  388]]
-(AB)C =
- [[  11  -51]
- [1021  590]
- [ 734  388]]
-Hasil A(BC)=(AB)C
-c(AB)
- [[ -45 -115   10]
- [ 560  130  145]
- [ 370   20  110]]
-(cA)B
- [[ -45 -115   10]
- [ 560  130  145]
- [ 370   20  110]]
-A(cB)
- [[ -45 -115   10]
- [ 560  130  145]
- [ 370   20  110]]
-Hasil c(AB) = (cA)B = A(cB)
-AI=
- [[ 1 -4  3]
- [ 6  9  2]
- [ 6  3  1]]
-IA=
- [[ 1 -4  3]
- [ 6  9  2]
- [ 6  3  1]]
-A=
- [[ 1 -4  3]
- [ 6  9  2]
- [ 6  3  1]]
-Hasil AI = IA = A
-A0=
- [[0 0 0]
- [0 0 0]
- [0 0 0]]
-0A=
- [[0 0 0]
- [0 0 0]
- [0 0 0]]
-A=
- [[ 1 -4  3]
- [ 6  9  2]
- [ 6  3  1]]
-Hasil A0 = 0A = A
-AB=
- [[ -9 -23   2]
- [112  26  29]
- [ 74   4  22]]
-BA=
- [[ 21 -36  28]
- [ 36  15  27]
- [ -4 -23   3]]
-Hasil AB != BA atau AB tidak sama dengan BA
 matrik c sebelum di transpose=
  [[ 8  4]
  [-3  1]
@@ -602,103 +968,9 @@ ordo P adalah (3, 3)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Buat program untuk mengalikan matrik A dan B (menggunakan for)</span>
-<span class="c1"># Matriks A dan B (contoh)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-
-<span class="c1"># Inisialisasi matriks hasil</span>
-<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># Perkalian matriks menggunakan nested for loop</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
-    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Baris baru pada matriks hasil</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-        <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Elemen baru pada baris hasil</span>
-        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
-            <span class="n">product</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>  <span class="c1"># Menambahkan hasil perkalian ke baris baru</span>
-    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>  <span class="c1"># Menambahkan baris baru ke hasil akhir</span>
-
-<span class="c1"># Menampilkan hasil perkalian matriks</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[99, 30]
-[33, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">C</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">C_trans</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">Cova</span> <span class="o">=</span> <span class="n">C_trans</span> <span class="o">@</span> <span class="n">C</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E adalah A+B = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F adalah 2xA = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;G adalah AxC= </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">A</span><span class="nd">@C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;G.shape = &quot;</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H adalah A@(B@C) = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">A</span><span class="o">@</span><span class="p">(</span><span class="n">B</span><span class="nd">@C</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I adalah (A@B)@C = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="p">(</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span><span class="nd">@C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K adalah c*(A@B) = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L adalah (c*A)@B = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">A</span><span class="p">)</span><span class="nd">@B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;M adalah A@(c*B) = </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">A</span><span class="o">@</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">B</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N adalah C Tranpose @ C =&quot;</span><span class="p">,</span> <span class="n">Cova</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E adalah A+B = 
- [[11  4  4]
- [ 9 13  2]
- [17  5 10]]
-F adalah 2xA = 
- [[ 6  4  2]
- [12  8  2]
- [18  2  8]]
-G adalah AxC= 
- [[25  7]
- [49 12]
- [46 18]]
-G.shape =  (3, 2)
-H adalah A@(B@C) = 
- [[337 100]
- [612 176]
- [738 254]]
-I adalah (A@B)@C = 
- [[337 100]
- [612 176]
- [738 254]]
-K adalah c*(A@B) = 
- [[114  84  51]
- [204 156  84]
- [321 129 156]]
-L adalah (c*A)@B = 
- [[114  84  51]
- [204 156  84]
- [321 129 156]]
-M adalah A@(c*B) = 
- [[114  84  51]
- [204 156  84]
- [321 129 156]]
-N adalah C Tranpose @ C = (2, 2)
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -745,9 +1017,24 @@ N adalah C Tranpose @ C = (2, 2)
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-matrik-penjumlahan-perkalian-pengurangan-transpose">Operasi matrik (penjumlahan, perkalian, pengurangan, transpose)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-matrik">Penjumlahan Matrik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-matriks">Pengurangan Matriks</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align-a-b-begin-bmatrix-2-3-4-1-0-7-end-bmatrix">\begin{align*}
+A-B&amp;=
+\begin{bmatrix}
+2&amp;-3&amp;4\
+1&amp;0&amp;-7
+\end{bmatrix}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matrik">Perkalian Matrik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar-matriks">Perkalian Skalar Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-matriks">Transpose Matriks</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
