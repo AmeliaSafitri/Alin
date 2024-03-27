@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tugas 3 &#8212; My sample book</title>
+    <title>Invers Matriks &#8212; My sample book</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matriks_Invers';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -364,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas 3</h1>
+    <h1>Invers Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,12 +376,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-mtriks-invers">sifat-sifat Mtriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dngan-eliminasi-gaus-jordan">mencari invers dngan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-mtriks-invers">sifat-sifat Mtriks invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-suatu-matriks-taksingular-adalah-tunggal">1. Invers suatu matriks taksingular adalah tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jika-matriks-a-dan-b-taksingular-maka">2. Jika matriks A dan B taksingular, maka:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-1-1-a">a. (A^-1)^-1=A</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ab-1-b-1-a-1">b.(AB)^-1=B^-1 A^-1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-a-t-1-a-1-t">c. (A^T)^-1=(A^-1)^T</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dngan-eliminasi-gaus-jordan">mencari invers dngan eliminasi gaus jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
 </ul>
             </nav>
         </div>
@@ -391,22 +399,221 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-3">
-<h1>Tugas 3<a class="headerlink" href="#tugas-3" title="Link to this heading">#</a></h1>
-<section id="matriks-invers">
-<h2>Matriks Invers<a class="headerlink" href="#matriks-invers" title="Link to this heading">#</a></h2>
-<p>Matriks yang memiliki invers disebut non-singular.</p>
-<p>Matriks yang tidak memiliki invers disebut singular.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="invers-matriks">
+<h1>Invers Matriks<a class="headerlink" href="#invers-matriks" title="Link to this heading">#</a></h1>
+<p>Invers sendiri dapat diartikan sebagai lawan dari sesuatu (kebalikan). Invers matriks dilambangkan dengan A-1. Suatu matriks dapat dilakukan invers jika jumlah baris dan kolom pada matriks tersebut harus sama. Rumus matriks yaitu sebagai berikut:</p>
+<p>Matriks ordo(2 x 2)
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+A=
+\begin{bmatrix}
+a&amp;b\\
+c&amp;d
+\end{bmatrix}
+\end{equation*}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\begin{equation*}
+A^-1=\frac{1}{ad-bc}
+\begin{bmatrix}
+d&amp;-b\\
+-c&amp;a
+\end{bmatrix}
+\end{equation*}
+\)</span>$</p>
+<p>Matriks ordo (3 x 3)
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+A=
+\begin{bmatrix}
+p&amp;q&amp;r\\
+s&amp;t&amp;u\\
+v&amp;w&amp;x\
+\end{bmatrix}
+\end{equation*}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\begin{equation*}
+A^-1=\frac{1}{ptx + quv + rst - vtr - wuq - xsq}
+Adj A
+\end{equation*}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks A =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A =
+ [[ 2 -3]
+ [-2  4]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terdapat contoh suatu matriks dengan ordo (2 x 2)</p>
+<p>Yang pertama dilakukan yaitu mencari determinan dari matriks tersebut. Dengan cara:</p>
+<p>det A = (2 x 4) - ((-2) x (-3)) = 2</p>
+<p>Setelah ditemukan nilai determinannya, langkah selanjutnya yaitu masukkan nilai determinan pada rumus invers ordo (2 x 2)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A=
+\begin{bmatrix}
+a&amp;b\\
+c&amp;d
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A^-1=\frac{1}{ad-bc}
+\begin{bmatrix}
+d&amp;-b\\
+-c&amp;a
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">],[(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks A^-1 =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A^-1 =
+ [[2.  1.5]
+ [1.  1. ]]
+</pre></div>
+</div>
+</div>
+</div>
 <section id="sifat-sifat-mtriks-invers">
-<h3>sifat-sifat Mtriks invers<a class="headerlink" href="#sifat-sifat-mtriks-invers" title="Link to this heading">#</a></h3>
+<h2>sifat-sifat Mtriks invers<a class="headerlink" href="#sifat-sifat-mtriks-invers" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AI=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">a</span><span class="nd">@i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;IA=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">i</span><span class="nd">@a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AI=
+ [[ 2  3  2]
+ [ 4  1 -3]
+ [-1 -2  2]]
+IA=
+ [[ 2  3  2]
+ [ 4  1 -3]
+ [-1 -2  2]]
+A=
+ [[ 2  3  2]
+ [ 4  1 -3]
+ [-1 -2  2]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Matriks identitas 3x3</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Contoh matriks A (misalnya)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="c1"># Menghitung invers dari matriks A</span>
+<span class="n">A_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Menghitung invers dari matriks identitas</span>
+<span class="n">I_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+
+<span class="c1"># Verifikasi persamaan (A⁻¹)⁻¹ = A</span>
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">I_inv</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Persamaan (A⁻¹)⁻¹ = A terpenuhi.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Persamaan (A⁻¹)⁻¹ = A tidak terpenuhi.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Persamaan (A⁻¹)⁻¹ = A tidak terpenuhi.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="invers-suatu-matriks-taksingular-adalah-tunggal">
+<h3>1. Invers suatu matriks taksingular adalah tunggal<a class="headerlink" href="#invers-suatu-matriks-taksingular-adalah-tunggal" title="Link to this heading">#</a></h3>
+</section>
+<section id="jika-matriks-a-dan-b-taksingular-maka">
+<h3>2. Jika matriks A dan B taksingular, maka:<a class="headerlink" href="#jika-matriks-a-dan-b-taksingular-maka" title="Link to this heading">#</a></h3>
+<section id="a-a-1-1-a">
+<h4>a. (A^-1)^-1=A<a class="headerlink" href="#a-a-1-1-a" title="Link to this heading">#</a></h4>
+<p>matriks yang memenuhi persamaan (A⁻¹)⁻¹ = A adalah matriks identitas. Matriks identitas, biasanya dilambangkan dengan I, memiliki elemen-elemen berikut:</p>
+<p>I =</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>kolom 1</p></th>
+<th class="head"><p>kolom 2</p></th>
+<th class="head"><p>kolom 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Baris 1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Baris 2</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Baris 3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Dalam hal ini, A juga harus merupakan matriks persegi (jumlah baris dan kolom yang sama) dan inversnya harus ada (yaitu, A⁻¹ harus ada). Jadi, jika kita mengambil invers dari matriks identitas, kita akan mendapatkan kembali matriks identitas itu sendiri:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (A^-1)^-1= I
+</pre></div>
+</div>
+</section>
+<section id="b-ab-1-b-1-a-1">
+<h4>b.(AB)^-1=B^-1 A^-1<a class="headerlink" href="#b-ab-1-b-1-a-1" title="Link to this heading">#</a></h4>
+</section>
+<section id="c-a-t-1-a-1-t">
+<h4>c. (A^T)^-1=(A^-1)^T<a class="headerlink" href="#c-a-t-1-a-1-t" title="Link to this heading">#</a></h4>
+</section>
+</section>
 </section>
 <section id="mencari-invers-dngan-eliminasi-gaus-jordan">
-<h3>mencari invers dngan eliminasi gaus jordan<a class="headerlink" href="#mencari-invers-dngan-eliminasi-gaus-jordan" title="Link to this heading">#</a></h3>
+<h2>mencari invers dngan eliminasi gaus jordan<a class="headerlink" href="#mencari-invers-dngan-eliminasi-gaus-jordan" title="Link to this heading">#</a></h2>
 </section>
 <section id="solusi-eliminasi-persamaan-linier">
-<h3>solusi eliminasi persamaan linier<a class="headerlink" href="#solusi-eliminasi-persamaan-linier" title="Link to this heading">#</a></h3>
+<h2>solusi eliminasi persamaan linier<a class="headerlink" href="#solusi-eliminasi-persamaan-linier" title="Link to this heading">#</a></h2>
 <p>(membuat contoh soal persamaan linier 6 variabel)</p>
-</section>
 </section>
 </section>
 
@@ -465,12 +672,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-mtriks-invers">sifat-sifat Mtriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dngan-eliminasi-gaus-jordan">mencari invers dngan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-mtriks-invers">sifat-sifat Mtriks invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-suatu-matriks-taksingular-adalah-tunggal">1. Invers suatu matriks taksingular adalah tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jika-matriks-a-dan-b-taksingular-maka">2. Jika matriks A dan B taksingular, maka:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-1-1-a">a. (A^-1)^-1=A</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ab-1-b-1-a-1">b.(AB)^-1=B^-1 A^-1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-a-t-1-a-1-t">c. (A^T)^-1=(A^-1)^T</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dngan-eliminasi-gaus-jordan">mencari invers dngan eliminasi gaus jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
 </ul>
   </nav></div>
 
