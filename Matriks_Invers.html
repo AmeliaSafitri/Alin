@@ -173,7 +173,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Selamat Datang di Notebook Amelia Safitri 23-039
                 </a>
             </li>
         </ul>
@@ -378,7 +378,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat Matriks Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan-elimination">Mencari Invers Dengan Eliminasi Gauss Jordan Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a></li>
 </ul>
             </nav>
         </div>
@@ -615,9 +615,79 @@ A^-1=
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Baca ordo matriks</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan ordo matriks: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Buat array numpy berukuran n x 2n dan inisialisasi dengan nol</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># Baca koefisien matriks</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Masukkan koefisien matriks:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Mulai dari indeks 1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Mulai dari indeks 1</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">][</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">]=&#39;</span><span class="p">))</span>
+
+<span class="c1"># Augmentasi dengan matriks identitas berordo n</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Terapkan Eliminasi Gauss-Jordan</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Pembagian dengan nol terdeteksi!&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+
+<span class="c1"># Operasi baris untuk membuat elemen diagonal utama menjadi 1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">divisor</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">divisor</span>
+
+<span class="c1"># Tampilkan matriks invers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIKS INVERS ADALAH:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-4-35e8e5dbee5a&gt;</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Baca ordo matriks</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan ordo matriks: &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Buat array numpy berukuran n x 2n dan inisialisasi dengan nol</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="solusi-eliminasi-persamaan-linier">
-<h2>solusi eliminasi persamaan linier<a class="headerlink" href="#solusi-eliminasi-persamaan-linier" title="Link to this heading">#</a></h2>
+<h2>Solusi Eliminasi Persamaan Linier<a class="headerlink" href="#solusi-eliminasi-persamaan-linier" title="Link to this heading">#</a></h2>
 <p>(membuat contoh soal persamaan linier 6 variabel)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -628,8 +698,9 @@ x + 2y - z + w - u + 2v = 8\\
 -2x + 3y + 4z - 5w + u - v = 12\\
 4x - y - 2z + 3w - 2u + v = 20\\
 \end{split}\]</div>
-<p>matriks augmented dari sistem persamaan ini:
-$<span class="math notranslate nohighlight">\(
+<p>matriks augmented dari sistem persamaan ini:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 2 &amp; 3 &amp; -4 &amp; 5 &amp; -2 &amp; 1 &amp; | &amp; 10 \\
 -1 &amp; 4 &amp; 2 &amp; -3 &amp; 1 &amp; -2 &amp; | &amp; 5 \\
@@ -638,9 +709,10 @@ $<span class="math notranslate nohighlight">\(
 -2 &amp; 3 &amp; 4 &amp; -5 &amp; 1 &amp; -1 &amp; | &amp; 12 \\
 4 &amp; -1 &amp; -2 &amp; 3 &amp; -2 &amp; 1 &amp; | &amp; 20 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Menulis matriks augmented :
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Menulis matriks augmented :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 2 &amp; 3 &amp; -4 &amp; 5 &amp; -2 &amp; 1 &amp; | &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 -1 &amp; 4 &amp; 2 &amp; -3 &amp; 1 &amp; -2 &amp; | &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -649,9 +721,10 @@ Menulis matriks augmented :
 -2 &amp; 3 &amp; 4 &amp; -5 &amp; 1 &amp; -1 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 4 &amp; -1 &amp; -2 &amp; 3 &amp; -2 &amp; 1 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Temukan di kolom ke-1 (membalikkan tanda di seluruh baris) dan tukar baris ke-2 dan ke-1
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Temukan di kolom ke-1 (membalikkan tanda di seluruh baris) dan tukar baris ke-2 dan ke-1</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; -4 &amp; -2 &amp; 3 &amp; -1 &amp; 2 &amp; | &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 2 &amp; 3 &amp; -4 &amp; 5 &amp; -2 &amp; 1 &amp; | &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -660,9 +733,10 @@ Temukan di kolom ke-1 (membalikkan tanda di seluruh baris) dan tukar baris ke-2 
 -2 &amp; 3 &amp; 4 &amp; -5 &amp; 1 &amp; -1 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 4 &amp; -1 &amp; -2 &amp; 3 &amp; -2 &amp; 1 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-1
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-1</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; -4 &amp; -2 &amp; 3 &amp; -1 &amp; 2 &amp; | &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 11 &amp; 0 &amp; -1 &amp; 0 &amp; -3 &amp; | &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -671,9 +745,10 @@ Hilangkan kolom ke-1
 0 &amp; -5 &amp; 0 &amp; 1 &amp; -1 &amp; 3 &amp; | &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 15 &amp; 6 &amp; -9 &amp; 2 &amp; -7 &amp; | &amp; 0 &amp; 4 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Pada kolom ke-2 dengan membagi baris ke-2 dengan 11
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Pada kolom ke-2 dengan membagi baris ke-2 dengan 11</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; -4 &amp; -2 &amp; 3 &amp; -1 &amp; 2 &amp; | &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; -1/11 &amp; 0 &amp; -3/11 &amp; | &amp; 1/11 &amp; 2/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -682,9 +757,10 @@ Pada kolom ke-2 dengan membagi baris ke-2 dengan 11
 0 &amp; -5 &amp; 0 &amp; 1 &amp; -1 &amp; 3 &amp; | &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 15 &amp; 6 &amp; -9 &amp; 2 &amp; -7 &amp; | &amp; 0 &amp; 4 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-1
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-1</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; -2 &amp; 29/11 &amp; -1 &amp; 10/11 &amp; | &amp; 4/11 &amp; -3/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; -1/11 &amp; 0 &amp; -3/11 &amp; | &amp; 1/11 &amp; 2/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -693,9 +769,10 @@ Hilangkan kolom ke-1
 0 &amp; 0 &amp; 0 &amp; 6/11 &amp; -1 &amp; 18/11 &amp; | &amp; 5/11 &amp; -12/11 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 6 &amp; -84/11 &amp; 2 &amp; -32/11 &amp; | &amp; -15/11 &amp; 14/11 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Pada kolom ke-3 membagi baris ke-3 dengan 7
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Pada kolom ke-3 membagi baris ke-3 dengan 7</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; -2 &amp; 29/11 &amp; -1 &amp; 10/11 &amp; | &amp; 4/11 &amp; -3/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; -1/11 &amp; 0 &amp; -3/11 &amp; | &amp; 1/11 &amp; 2/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -704,9 +781,10 @@ Pada kolom ke-3 membagi baris ke-3 dengan 7
 0 &amp; 0 &amp; 0 &amp; 6/11 &amp; -1 &amp; 18/11 &amp; | &amp; 5/11 &amp; -12/11 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 6 &amp; -84/11 &amp; 2 &amp; -32/11 &amp; | &amp; -15/11 &amp; 14/11 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-3
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-3</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; -3/77 &amp; 1/7 &amp; 46/77 &amp; | &amp; 2/11 &amp; -5/77 &amp; 2/7 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; -1/11 &amp; 0 &amp; -3/11 &amp; | &amp; 1/11 &amp; 2/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -715,9 +793,10 @@ Hilangkan kolom ke-3
 0 &amp; 0 &amp; 0 &amp; 6/11 &amp; -1 &amp; 18/11 &amp; | &amp; 5/11 &amp; -12/11 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 30/77 &amp; -10/7 &amp; -152/77 &amp; | &amp; -9/11 &amp; 50/77 &amp; -6/7 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Pada kolom ke-4 membagi baris ke-4 dengan 3/77
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Pada kolom ke-4 membagi baris ke-4 dengan 3/77</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; -3/77 &amp; 1/7 &amp; 46/77 &amp; | &amp; 2/11 &amp; -5/77 &amp; 2/7 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; -1/11 &amp; 0 &amp; -3/11 &amp; | &amp; 1/11 &amp; 2/11 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -726,9 +805,10 @@ Pada kolom ke-4 membagi baris ke-4 dengan 3/77
 0 &amp; 0 &amp; 0 &amp; 6/11 &amp; -1 &amp; 18/11 &amp; | &amp; 5/11 &amp; -12/11 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 30/77 &amp; -10/7 &amp; -152/77 &amp; | &amp; -9/11 &amp; 50/77 &amp; -6/7 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-4
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-4</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; | &amp; -1 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; -8/3 &amp; -5/3 &amp; | &amp; -8/3 &amp; 1/3 &amp; -3 &amp; 7/3 &amp; 0 &amp; 0 \\
@@ -737,9 +817,10 @@ Hilangkan kolom ke-4
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 15 &amp; 10 &amp; | &amp; 17 &amp; -2 &amp; 18 &amp; -14 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 10 &amp; 4 &amp; | &amp; 11 &amp; 0 &amp; 12 &amp; -10 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Pada kolom ke-5 membagi baris ke-5 dengan 15
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Pada kolom ke-5 membagi baris ke-5 dengan 15</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; | &amp; -1 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; -8/3 &amp; -5/3 &amp; | &amp; -8/3 &amp; 1/3 &amp; -3 &amp; 7/3 &amp; 0 &amp; 0 \\
@@ -748,9 +829,10 @@ Pada kolom ke-5 membagi baris ke-5 dengan 15
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2/3 &amp; | &amp; 17/15 &amp; -2/15 &amp; 6/5 &amp; -14/15 &amp; 1/15 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 10 &amp; 4 &amp; | &amp; 11 &amp; 0 &amp; 12 &amp; -10 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-5
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-5</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2/3 &amp; | &amp; 2/15 &amp; -2/15 &amp; 1/5 &amp; 1/15 &amp; 1/15 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1/9 &amp; | &amp; 16/45 &amp; -1/45 &amp; 1/5 &amp; -7/45 &amp; 8/45 &amp; 0 \\
@@ -759,9 +841,10 @@ Hilangkan kolom ke-5
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2/3 &amp; | &amp; 17/15 &amp; -2/15 &amp; 6/5 &amp; -14/15 &amp; 1/15 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -8/3 &amp; | &amp; -1/3 &amp; 4/3 &amp; 0 &amp; -2/3 &amp; -2/3 &amp; 1 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Pada kolom ke-6 membagi baris ke-6 dengan -8/3
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Pada kolom ke-6 membagi baris ke-6 dengan -8/3</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2/3 &amp; | &amp; 2/15 &amp; -2/15 &amp; 1/5 &amp; 1/15 &amp; 1/15 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1/9 &amp; | &amp; 16/45 &amp; -1/45 &amp; 1/5 &amp; -7/45 &amp; 8/45 &amp; 0 \\
@@ -770,9 +853,10 @@ Pada kolom ke-6 membagi baris ke-6 dengan -8/3
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2/3 &amp; | &amp; 17/15 &amp; -2/15 &amp; 6/5 &amp; -14/15 &amp; 1/15 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; | &amp; 1/8 &amp; -1/2 &amp; 0 &amp; 1/4 &amp; 1/4 &amp; -3/8 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Hilangkan kolom ke-6
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Hilangkan kolom ke-6</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 1/20 &amp; 1/5 &amp; 1/5 &amp; -1/10 &amp; -1/10 &amp; 1/4 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 41/120 &amp; 1/30 &amp; 1/5 &amp; -11/60 &amp; 3/20 &amp; 1/24 \\
@@ -781,9 +865,10 @@ Hilangkan kolom ke-6
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; | &amp; 21/20 &amp; 1/5 &amp; 6/5 &amp; -11/10 &amp; -1/10 &amp; 1/4 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; | &amp; 1/8 &amp; -1/2 &amp; 0 &amp; 1/4 &amp; 1/4 &amp; -3/8 \
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Sehingga matriks invers yang dihasilkan yaitu :
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Sehingga matriks invers yang dihasilkan yaitu :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1/20 &amp; 1/5 &amp; 1/5 &amp; -1/10 &amp; -1/10 &amp; 1/4 \\
 41/120 &amp; 1/30 &amp; 1/5 &amp; -11/60 &amp; 3/20 &amp; 1/24 \\
@@ -792,35 +877,102 @@ Sehingga matriks invers yang dihasilkan yaitu :
 21/20 &amp; 1/5 &amp; 6/5 &amp; -11/10 &amp; -1/10 &amp; 1/4 \\
 1/8 &amp; -1/2 &amp; 0 &amp; 1/4 &amp; 1/4 &amp; -3/8 \
 \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="c1"># Matriks identitas 3x3</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Baca ordo matriks</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan ordo matriks: &#39;</span><span class="p">))</span>
 
-<span class="c1"># Contoh matriks A (misalnya)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Buat array numpy berukuran n x 2n dan inisialisasi dengan nol</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
 
-<span class="c1"># Menghitung invers dari matriks A</span>
-<span class="n">A_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1"># Baca koefisien matriks</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Masukkan koefisien matriks:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Mulai dari indeks 1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Mulai dari indeks 1</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">][</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">]=&#39;</span><span class="p">))</span>
 
-<span class="c1"># Menghitung invers dari matriks identitas</span>
-<span class="n">I_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="c1"># Augmentasi dengan matriks identitas berordo n</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># Verifikasi persamaan (A⁻¹)⁻¹ = A</span>
-<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">I_inv</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Persamaan (A⁻¹)⁻¹ = A terpenuhi.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Persamaan (A⁻¹)⁻¹ = A tidak terpenuhi.&quot;</span><span class="p">)</span>
+<span class="c1"># Terapkan Eliminasi Gauss-Jordan</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Pembagian dengan nol terdeteksi!&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+
+<span class="c1"># Operasi baris untuk membuat elemen diagonal utama menjadi 1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">divisor</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">divisor</span>
+
+<span class="c1"># Tampilkan matriks invers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIKS INVERS ADALAH:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Persamaan (A⁻¹)⁻¹ = A tidak terpenuhi.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan ordo matriks: 6
+Masukkan koefisien matriks:
+a[1][1]=2
+a[1][2]=3
+a[1][3]=-4
+a[1][4]=5
+a[1][5]=-2
+a[1][6]=1
+a[2][1]=-1
+a[2][2]=4
+a[2][3]=2
+a[2][4]=-3
+a[2][5]=1
+a[2][6]=-2
+a[3][1]=2
+a[3][2]=-1
+a[3][3]=3
+a[3][4]=-4
+a[3][5]=2
+a[3][6]=1
+a[4][1]=5
+a[4][2]=2
+a[4][3]=-1
+a[4][4]=1
+a[4][5]=-1
+a[4][6]=2
+a[5][1]=-2
+a[5][2]=3
+a[5][3]=4
+a[5][4]=-5
+a[5][5]=1
+a[5][6]=-1
+a[6][1]=4
+a[6][2]=-1
+a[6][3]=-2
+a[6][4]=3
+a[6][5]=-2
+a[6][6]=1
+
+MATRIKS INVERS ADALAH:
+0.05000000000000117	0.1999999999999999	0.20000000000000073	-0.10000000000000106	-0.09999999999999963	0.2500000000000006	
+0.34166666666666656	0.033333333333333465	0.20000000000000043	-0.18333333333333376	0.15000000000000008	0.04166666666666701	
+2.5166666666666786	-0.2666666666666662	2.4000000000000083	-3.033333333333349	1.3000000000000036	1.9166666666666752	
+2.3833333333333386	-0.13333333333333328	2.200000000000007	-2.7666666666666773	0.9000000000000034	1.58333333333334	
+1.0500000000000016	0.19999999999999984	1.2000000000000013	-1.1000000000000016	-0.09999999999999917	0.2500000000000012	
+0.12499999999999793	-0.4999999999999997	-1.332267629550192e-15	0.2500000000000019	0.24999999999999925	-0.37500000000000117	
 </pre></div>
 </div>
 </div>
@@ -885,7 +1037,7 @@ Sehingga matriks invers yang dihasilkan yaitu :
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat Matriks Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan-elimination">Mencari Invers Dengan Eliminasi Gauss Jordan Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">solusi eliminasi persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a></li>
 </ul>
   </nav></div>
 
