@@ -1,7 +1,7 @@
 # Selamat Datang di Notebook Amelia Safitri 23-039
 
-This is a small sample book to give you a feel for how book content is
-structured.
+Ini adalah notebook AMELIA SAFITRI dengan NIM : 230411100039
+
 It shows off a few of the major file types, as well as some sample content.
 It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 
