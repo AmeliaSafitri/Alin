@@ -378,7 +378,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat Matriks Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan-elimination">Mencari Invers Dengan Eliminasi Gauss Jordan Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-matriks-invers-dengan-ordo-6x6-mengguanakan-code-program">Menentukan matriks invers dengan ordo 6x6 mengguanakan code program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-matriks-invers-dengan-menerapkan-rowscale-rowadd-dan-rowswap">Menentukan matriks invers dengan menerapkan RowScale, RowAdd, dan RowSwap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuktikan-bahwa-jika-matriks-a-dikalikan-dengan-invers-matriks-a-akan-menghasilkan-matriks-identitas">Membuktikan bahwa “Jika matriks A dikalikan dengan invers matriks A akan menghasilkan matriks identitas”</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -675,23 +680,23 @@ Matriks invers A:
 <p>(membuat contoh soal persamaan linier 6 variabel)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\\2x + y + 0z + 0w + 0u + 0v = 0\\
-x + 3y + z + 0w +0 u + 0v = 0\\
-0x + y + 2z + w + 0u + 0v = 0\\
-0x + 0y + z + 3w + u + 0v = 0\\
-0x + 0y + 0z + w + 2u + v = 0\\
-0x + 0y + 0z + 0w + u + 3v = 0\\
+\\2x + y + 0z + 0w + 0u + 0v = 1\\
+x + 3y + z + 0w +0 u + 0v = -2\\
+0x + y + 2z + w + 0u + 0v = -1\\
+0x + 0y + z + 3w + u + 0v = -1\\
+0x + 0y + 0z + w + 2u + v = -1\\
+0x + 0y + 0z + 0w + u + 3v = 2\\
 \end{split}\]</div>
 <p>matriks augmented dari sistem persamaan ini:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
-2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0 \\
-1 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0 \\
-0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; | &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 3 &amp; 1 &amp; 0 &amp; | &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; | &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 &amp; | &amp; 0 \
+2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 1 \\
+1 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; -2 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; | &amp; -1\\
+0 &amp; 0 &amp; 1 &amp; 3 &amp; 1 &amp; 0 &amp; | &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; | &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 &amp; | &amp; 2 \
 \end{bmatrix}
 \end{split}\]</div>
 <p>Menulis matriks augmented :</p>
@@ -982,7 +987,7 @@ x + 3y + z + 0w +0 u + 0v = 0\\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
 \end{split}\]</div>
-<p>Kurangi baris ke-5 dengan baris ke-4 dan bagikan baris ke-4 dengan (19)</p>
+<p>Kurangi baris ke-5 dengan baris ke-4 dan bagikan baris ke-4 dengan (-19)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -1270,7 +1275,8 @@ x + 3y + z + 0w +0 u + 0v = 0\\
 -1/71 &amp; 2/71 &amp; -5/71 &amp; 8/71 &amp; -19/71 &amp; 30/71\
 \end{bmatrix}
 \end{split}\]</div>
-<p>####Menentukan matriks invers dengan ordo 6x6 mengguanakan code program</p>
+<section id="menentukan-matriks-invers-dengan-ordo-6x6-mengguanakan-code-program">
+<h3>Menentukan matriks invers dengan ordo 6x6 mengguanakan code program<a class="headerlink" href="#menentukan-matriks-invers-dengan-ordo-6x6-mengguanakan-code-program" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1324,59 +1330,1677 @@ x + 3y + z + 0w +0 u + 0v = 0\\
 </div>
 </div>
 </div>
-<p>####Menentukan nilai dari x, y, z, w, u, v menggunakan code program</p>
+</section>
+<section id="menentukan-matriks-invers-dengan-menerapkan-rowscale-rowadd-dan-rowswap">
+<h3>Menentukan matriks invers dengan menerapkan RowScale, RowAdd, dan RowSwap<a class="headerlink" href="#menentukan-matriks-invers-dengan-menerapkan-rowscale-rowadd-dan-rowswap" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library numpy and memasukkan persamaan dalam bentuk matrix</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A  = </span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="c1"># Matriks koefisien</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">45</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">12</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">71</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">19</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">38</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">10</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">71</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">12</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">60</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">15</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">71</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">10</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">40</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">8</span><span class="o">/</span><span class="mi">71</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">3</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">15</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">57</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="o">/</span><span class="mi">71</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">8</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="o">/</span><span class="mi">71</span><span class="p">,</span> <span class="mi">30</span><span class="o">/</span><span class="mi">71</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix b =</span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kita gabungkan setiap kolom Matrix b ke baris Matrix A&quot;</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A  = </span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="c1"># Vektor hasil</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># Menggunakan metode eliminasi Gauss-Jordan</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Skala baris ke-i sehingga elemen utama menjadi 1</span>
-    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-    <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
-            <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-<span class="c1"># Solusi SPL</span>
-<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">x5</span><span class="p">,</span> <span class="n">x6</span> <span class="o">=</span> <span class="n">B</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nilai variabelnya adalah:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;z = &quot;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w = &quot;</span><span class="p">,</span> <span class="n">x4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u = &quot;</span><span class="p">,</span> <span class="n">x5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;v = &quot;</span><span class="p">,</span> <span class="n">x6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kita juga definisikan Matrix Identitasnya&quot;</span><span class="p">)</span>
+<span class="n">B</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix I = </span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai variabelnya adalah:
-x =  0
-y =  0
-z =  0
-w =  0
-u =  0
-v =  0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix A  = 
+[[2 1 0 0 0 0]
+ [1 3 1 0 0 0]
+ [0 1 2 1 0 0]
+ [0 0 1 3 1 0]
+ [0 0 0 1 2 1]
+ [0 0 0 0 1 3]]
+
+
+Matrix b =
+[ 1 -2 -1 -1 -1  2]
+
+
+Kita gabungkan setiap kolom Matrix b ke baris Matrix A
+Matrix A  = 
+[[ 2  1  0  0  0  0  1]
+ [ 1  3  1  0  0  0 -2]
+ [ 0  1  2  1  0  0 -1]
+ [ 0  0  1  3  1  0 -1]
+ [ 0  0  0  1  2  1 -1]
+ [ 0  0  0  0  1  3  2]]
+
+
+Kita juga definisikan Matrix Identitasnya
+Matrix I = 
+[[1 0 0 0 0 0]
+ [0 1 0 0 0 0]
+ [0 0 1 0 0 0]
+ [0 0 0 1 0 0]
+ [0 0 0 0 1 0]
+ [0 0 0 0 0 1]]
 </pre></div>
 </div>
 </div>
 </div>
-<p>####Membuktikan bahwa “Jika matriks A dikalikan dengan invers matriks A akan menghasilkan matriks identitas”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowSwap will return duplicate array with rows</span>
+<span class="c1">#     k and l swapped. (menukarkan persamaan)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A (jumlah baris A)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A (jumlah kolom A)</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowScale</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowScale will return duplicate array with the</span>
+<span class="c1">#     entries of row k multiplied by scale. (mengalikan entry baris A dengan skala)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a numpy array.  RowAdd will return duplicate array with row</span>
+<span class="c1">#     l modified.  The new values will be the old values of row l added to</span>
+<span class="c1">#     the values of row k, multiplied by scale. (menambahkan nilai baris k dikalikan dengan skala)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tukar baris 1 dengan baris 0&quot;</span><span class="p">)</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 = 2R2&quot;</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B2</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B2</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R3 = baris ke-2 - baris ke-1&quot;</span><span class="p">)</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">A2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B3</span> <span class="o">=</span> <span class="n">B2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B3</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B3</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R4 = (1/-2)R4&quot;</span><span class="p">)</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B4</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B4</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tukar baris 2 dengan baris 3&quot;</span><span class="p">)</span>
+<span class="n">A5</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B5</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B5</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R6 = 3R6&quot;</span><span class="p">)</span>
+<span class="n">A6</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B6</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B6</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R7 = baris ke-1 - baris ke-2&quot;</span><span class="p">)</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">A6</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B7</span> <span class="o">=</span> <span class="n">B6</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B7</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B7</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B7</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R8 = (1/-3)R8&quot;</span><span class="p">)</span>
+<span class="n">A8</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A8</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B8</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B8</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R9 = (-5)R9&quot;</span><span class="p">)</span>
+<span class="n">A9</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A9</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B9</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B9</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R10 = baris ke-3 - baris ke-2&quot;</span><span class="p">)</span>
+<span class="n">A10</span> <span class="o">=</span> <span class="n">A9</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A10</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A10</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B10</span> <span class="o">=</span> <span class="n">B9</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B10</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B10</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B10</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R11 = (1/5)R10&quot;</span><span class="p">)</span>
+<span class="n">A11</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A11</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B11</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B11</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tukar baris 4 dengan baris 3&quot;</span><span class="p">)</span>
+<span class="n">A12</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B12</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B11</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B12</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R13 = (-5)R13&quot;</span><span class="p">)</span>
+<span class="n">A13</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A13</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B13</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B13</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R14 = baris ke-1 - baris ke-3&quot;</span><span class="p">)</span>
+<span class="n">A14</span> <span class="o">=</span> <span class="n">A13</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A14</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A14</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B14</span> <span class="o">=</span> <span class="n">B13</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B14</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B14</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B14</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R15 = (1/5)R15&quot;</span><span class="p">)</span>
+<span class="n">A15</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A15</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B15</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B15</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R16 = (2)R16&quot;</span><span class="p">)</span>
+<span class="n">A16</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A16</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B16</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B15</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B16</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R14 = baris ke-2 - baris ke-3&quot;</span><span class="p">)</span>
+<span class="n">A17</span> <span class="o">=</span> <span class="n">A16</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A17</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A17</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A17</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B17</span> <span class="o">=</span> <span class="n">B16</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B17</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B17</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B17</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B17</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B17</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R18 = (1/-2)R18&quot;</span><span class="p">)</span>
+<span class="n">A18</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A18</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B18</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B17</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B18</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tukar baris 1 dengan baris 0
+[[ 1.  3.  1.  0.  0.  0. -2.]
+ [ 2.  1.  0.  0.  0.  0.  1.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[0. 1. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 1.]] 
+
+R2 = 2R2
+[[ 2.  6.  2.  0.  0.  0. -4.]
+ [ 2.  1.  0.  0.  0.  0.  1.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[0. 2. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 1.]] 
+
+R3 = baris ke-2 - baris ke-1
+[[-2. -6. -2. -0. -0. -0.  4.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[-0. -2. -0. -0. -0. -0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R4 = (1/-2)R4
+[[ 1.  3.  1.  0.  0.  0. -2.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1.  0.  0.  0.  0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+Tukar baris 2 dengan baris 3
+[[ 1.  3.  1.  0.  0.  0. -2.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R6 = 3R6
+[[ 1.  3.  1.  0.  0.  0. -2.]
+ [ 0.  3.  6.  3.  0.  0. -3.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  3.  0.  0.  0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R7 = baris ke-1 - baris ke-2
+[[ 1.  0. -5. -3.  0.  0.  1.]
+ [-0. -3. -6. -3. -0. -0.  3.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [-0. -0. -3. -0. -0. -0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R8 = (1/-3)R8
+[[ 1.  0. -5. -3.  0.  0.  1.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0. -5. -2.  0.  0.  0.  5.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R9 = (-5)R9
+[[  1.   0.  -5.  -3.   0.   0.   1.]
+ [ -0.  -5. -10.  -5.  -0.  -0.   5.]
+ [  0.  -5.  -2.   0.   0.   0.   5.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [-0. -0. -5. -0. -0. -0.]
+ [ 1. -2.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R10 = baris ke-3 - baris ke-2
+[[ 1.  0. -5. -3.  0.  0.  1.]
+ [ 0.  5. 10.  5.  0.  0. -5.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  5.  0.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R11 = (1/5)R10
+[[ 1.  0. -5. -3.  0.  0.  1.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+Tukar baris 4 dengan baris 3
+[[ 1.  0. -5. -3.  0.  0.  1.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R13 = (-5)R13
+[[  1.   0.  -5.  -3.   0.   0.   1.]
+ [  0.   1.   2.   1.   0.   0.  -1.]
+ [ -0.  -0.  -5. -15.  -5.  -0.   5.]
+ [  0.   0.   8.   5.   0.   0.   0.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [-0. -0. -0. -5. -0. -0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R14 = baris ke-1 - baris ke-3
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  5. 15.  5.  0. -5.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  5.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R15 = (1/5)R15
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R16 = (2)R16
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  2.  1.  0.  0. -1.]
+ [ 0.  0.  2.  6.  2.  0. -2.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  2.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R14 = baris ke-2 - baris ke-3
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  0. -5. -2.  0.  1.]
+ [-0. -0. -2. -6. -2. -0.  2.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [-0. -0. -0. -2. -0. -0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R18 = (1/-2)R18
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  0. -5. -2.  0.  1.]
+ [ 0.  0.  1.  3.  1.  0. -1.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R19 = (8)R19&quot;</span><span class="p">)</span>
+<span class="n">A19</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A18</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A19</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B19</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B18</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B19</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R20 = baris ke-4 - baris ke-3&quot;</span><span class="p">)</span>
+<span class="n">A20</span> <span class="o">=</span> <span class="n">A19</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A20</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A20</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B20</span> <span class="o">=</span> <span class="n">B19</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B20</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B20</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B10</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R21 = (1/-8)R21&quot;</span><span class="p">)</span>
+<span class="n">A21</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/-</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A21</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B21</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/-</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B21</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tukar baris 5 dengan baris 4&quot;</span><span class="p">)</span>
+<span class="n">A22</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A21</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B22</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B21</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B22</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R23 = (12)R23&quot;</span><span class="p">)</span>
+<span class="n">A23</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A23</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B23</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B22</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B23</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R24 = baris ke-1 - baris ke-4&quot;</span><span class="p">)</span>
+<span class="n">A24</span> <span class="o">=</span> <span class="n">A23</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A24</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A24</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A24</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B24</span> <span class="o">=</span> <span class="n">B23</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B24</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B24</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B24</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B24</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B24</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R25 = (1/-12)R25&quot;</span><span class="p">)</span>
+<span class="n">A25</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A25</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B25</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B24</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B25</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R26 = (-5)R26&quot;</span><span class="p">)</span>
+<span class="n">A26</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A26</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B26</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B25</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B26</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R27 = baris ke-2 - baris ke-4&quot;</span><span class="p">)</span>
+<span class="n">A27</span> <span class="o">=</span> <span class="n">A26</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A27</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A27</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A27</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B27</span> <span class="o">=</span> <span class="n">B26</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B27</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B27</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B27</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B27</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R28 = (1/5)R28&quot;</span><span class="p">)</span>
+<span class="n">A28</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A28</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B28</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B28</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R29 = (3)R29&quot;</span><span class="p">)</span>
+<span class="n">A29</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A28</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A29</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B29</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B28</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B29</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R30 = baris ke-3 - baris ke-4&quot;</span><span class="p">)</span>
+<span class="n">A30</span> <span class="o">=</span> <span class="n">A29</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A30</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A30</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A30</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B30</span> <span class="o">=</span> <span class="n">B29</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B30</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B30</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B30</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B30</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B30</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R31 = (-1/3)R31&quot;</span><span class="p">)</span>
+<span class="n">A31</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A31</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B31</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B30</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B31</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R32 = (-19)R32&quot;</span><span class="p">)</span>
+<span class="n">A32</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A31</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A32</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B32</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B31</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B32</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R33 = baris ke-5 - baris ke-4&quot;</span><span class="p">)</span>
+<span class="n">A33</span> <span class="o">=</span> <span class="n">A32</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A33</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A33</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A33</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A33</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A33</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B33</span> <span class="o">=</span> <span class="n">B32</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B33</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B33</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B33</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B33</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B33</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R34 = (1/-19)R34&quot;</span><span class="p">)</span>
+<span class="n">A34</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A33</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A34</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B34</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B33</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B34</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tukar baris 6 dengan baris 5&quot;</span><span class="p">)</span>
+<span class="n">A35</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A34</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A35</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B35</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B34</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B35</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R36 = (-19)R36&quot;</span><span class="p">)</span>
+<span class="n">A36</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A35</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A36</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B36</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B35</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B36</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R37 = baris ke-1 - baris ke-5&quot;</span><span class="p">)</span>
+<span class="n">A37</span> <span class="o">=</span> <span class="n">A36</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A37</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A37</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A37</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A37</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B37</span> <span class="o">=</span> <span class="n">B36</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B37</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B37</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B37</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B37</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R38 = (1/-19)R38&quot;</span><span class="p">)</span>
+<span class="n">A38</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A38</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B38</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B38</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R39 = (8)R39&quot;</span><span class="p">)</span>
+<span class="n">A39</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A38</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A39</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B39</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B38</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B39</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R40 = baris ke-2 - baris ke-5&quot;</span><span class="p">)</span>
+<span class="n">A40</span> <span class="o">=</span> <span class="n">A39</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A40</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A40</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A40</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A40</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A40</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B40</span> <span class="o">=</span> <span class="n">B39</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B40</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B40</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B40</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B40</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B40</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R41 = (-1/8)R40&quot;</span><span class="p">)</span>
+<span class="n">A41</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A40</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A41</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B41</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B40</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B41</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R42 = (-5)R42&quot;</span><span class="p">)</span>
+<span class="n">A42</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A41</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A42</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B42</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B41</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B42</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R43 = baris ke-3 - baris ke-5&quot;</span><span class="p">)</span>
+<span class="n">A43</span> <span class="o">=</span> <span class="n">A42</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A43</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A43</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A43</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A43</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A43</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B43</span> <span class="o">=</span> <span class="n">B42</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B43</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B43</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B43</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B43</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B43</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R44 = (1/5)R44&quot;</span><span class="p">)</span>
+<span class="n">A44</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A43</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A44</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B44</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B43</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B44</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R19 = (8)R19
+[[ 1.  0.  0. 12.  5.  0. -4.]
+ [ 0.  1.  0. -5. -2.  0.  1.]
+ [ 0.  0.  8. 24.  8.  0. -8.]
+ [ 0.  0.  8.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  2.  1. -1.]
+ [ 0.  0.  0.  0.  1.  3.  2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [ 0.  0.  0.  8.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R20 = baris ke-4 - baris ke-3
+[[  1.   0.   0.  12.   5.   0.  -4.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [ -0.  -0.  -8. -24.  -8.  -0.   8.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  0.  0.  0.]
+ [ 0.  0.  5.  0.  0.  0.]
+ [ 1. -2.  5.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R21 = (1/-8)R21
+[[  1.   0.   0.  12.   5.   0.  -4.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 1. -2.  5. -8.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+Tukar baris 5 dengan baris 4
+[[  1.   0.   0.  12.   5.   0.  -4.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 1. -2.  5. -8.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R23 = (12)R23
+[[  1.   0.   0.  12.   5.   0.  -4.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.  12.  24.  12. -12.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[ 0.  1. -3.  5.  0.  0.]
+ [ 0.  0.  1. -2.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0. 12.  0.]
+ [ 1. -2.  5. -8.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+R24 = baris ke-1 - baris ke-4
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [ -0.  -0.  -0. -12. -24. -12.  12.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   0.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [ -0.  -0.  -0.  -0. -12.  -0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R25 = (1/-12)R25
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   0.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R26 = (-5)R26
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.  -5.  -2.   0.   1.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [ -0.  -0.  -0.  -5. -10.  -5.   5.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   0.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [ -0.  -0.  -0.  -0.  -5.  -0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R27 = baris ke-2 - baris ke-4
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   5.  10.   5.  -5.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [  0.   0.   0.   0.   5.   0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R28 = (1/5)R28
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R29 = (3)R29
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   3.   1.   0.  -1.]
+ [  0.   0.   0.   3.   6.   3.  -3.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.   0.   0.]
+ [  0.   0.   0.   0.   3.   0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R30 = baris ke-3 - baris ke-4
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [ -0.  -0.  -0.  -3.  -6.  -3.   3.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [ -0.  -0.  -0.  -0.  -3.  -0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R31 = (-1/3)R31
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R32 = (-19)R32
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [ -0.  -0.  -0. -19. -38. -19.  19.]
+ [  0.   0.   0. -19.  -8.   0.   8.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [ -0.  -0.  -0.  -0. -19.  -0.]
+ [  1.  -2.   5.  -8.   0.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R33 = baris ke-5 - baris ke-4
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.  19.  38.  19. -19.]
+ [  0.   0.   0.   0.  30.  19. -11.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.  19.   0.]
+ [  1.  -2.   5.  -8.  19.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+R34 = (1/-19)R34
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.  30.  19. -11.]
+ [  0.   0.   0.   0.   1.   3.   2.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  1.  -2.   5.  -8.  19.   0.]
+ [  0.   0.   0.   0.   0.   1.]] 
+
+Tukar baris 6 dengan baris 5
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R36 = (-19)R36
+[[  1.   0.   0.   0. -19. -12.   8.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [ -0.  -0.  -0.  -0. -19. -57. -38.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.   0.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [ -0.  -0.  -0.  -0.  -0. -19.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R37 = baris ke-1 - baris ke-5
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.  19.  57.  38.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.  19.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R38 = (1/-19)R38
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R39 = (8)R39
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   8.   5.  -4.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   8.  24.  16.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.   0.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   8.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R40 = baris ke-2 - baris ke-5
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [ -0.  -0.  -0.  -0.  -8. -24. -16.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [ -0.  -0.  -0.  -0.  -0.  -8.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R41 = (-1/8)R40
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R42 = (-5)R42
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.  -5.  -3.   2.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [ -0.  -0.  -0.  -0.  -5. -15. -10.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   0.]
+ [  0.   0.   0.   0.   1.   0.]
+ [ -0.  -0.  -0.  -0.  -0.  -5.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R43 = baris ke-3 - baris ke-5
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   5.  15.  10.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   5.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R44 = (1/5)R44
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R45 = (2)R45&quot;</span><span class="p">)</span>
+<span class="n">A45</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A44</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A45</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B45</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B44</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B45</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R46 = baris ke-4 - baris ke-5&quot;</span><span class="p">)</span>
+<span class="n">A46</span> <span class="o">=</span> <span class="n">A45</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A46</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A46</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A46</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A46</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A46</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B46</span> <span class="o">=</span> <span class="n">B45</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B46</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B46</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B46</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B46</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B46</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R47 = (-1/2)R47&quot;</span><span class="p">)</span>
+<span class="n">A47</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A46</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A47</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B47</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B46</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B47</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R48 = (30)R48&quot;</span><span class="p">)</span>
+<span class="n">A48</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A47</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A48</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B48</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B47</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B48</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R49 = baris ke-6 - baris ke-5&quot;</span><span class="p">)</span>
+<span class="n">A49</span> <span class="o">=</span> <span class="n">A48</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A49</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A49</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A49</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A49</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A49</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B49</span> <span class="o">=</span> <span class="n">B48</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B49</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B49</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B49</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B49</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B49</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R50 = (-1/30)R50&quot;</span><span class="p">)</span>
+<span class="n">A50</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A49</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A50</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B50</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B49</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B50</span><span class="o">.</span><span class="n">round</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R51 = (-1/71)R51&quot;</span><span class="p">)</span>
+<span class="n">A51</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">71</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A51</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B51</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">71</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B51</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R52 = (45)R52&quot;</span><span class="p">)</span>
+<span class="n">A52</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A51</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A52</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B52</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B51</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B52</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R53 = baris ke-1 - baris ke-6&quot;</span><span class="p">)</span>
+<span class="n">A53</span> <span class="o">=</span> <span class="n">A52</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A53</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A53</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A53</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A53</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A53</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B53</span> <span class="o">=</span> <span class="n">B52</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B53</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B53</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B53</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B53</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B53</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R54 = (1/-45)R54&quot;</span><span class="p">)</span>
+<span class="n">A54</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A53</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A54</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B54</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B53</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B54</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R55 = (-19)R55&quot;</span><span class="p">)</span>
+<span class="n">A55</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A54</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A55</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B55</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B54</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B55</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R56 = baris ke-2 - baris ke-6&quot;</span><span class="p">)</span>
+<span class="n">A56</span> <span class="o">=</span> <span class="n">A55</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A56</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A56</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A56</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A56</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A56</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B56</span> <span class="o">=</span> <span class="n">B55</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B56</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B56</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B56</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B56</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B56</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R57 = (1/19)R57&quot;</span><span class="p">)</span>
+<span class="n">A57</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A56</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A57</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B57</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B56</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B57</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R58 = (12)R58&quot;</span><span class="p">)</span>
+<span class="n">A58</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A57</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A58</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B58</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B57</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B58</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R59 = baris ke-3 - baris ke-6&quot;</span><span class="p">)</span>
+<span class="n">A59</span> <span class="o">=</span> <span class="n">A58</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A59</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A59</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A59</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A59</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A59</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B59</span> <span class="o">=</span> <span class="n">B58</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B59</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B59</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B59</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B59</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B59</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R60 = (1/-12)R60&quot;</span><span class="p">)</span>
+<span class="n">A60</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A59</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A60</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B60</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B59</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B60</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R61 = (-5)R61&quot;</span><span class="p">)</span>
+<span class="n">A61</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A60</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A61</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B61</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B60</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B61</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R62 = baris ke-4 - baris ke-6&quot;</span><span class="p">)</span>
+<span class="n">A62</span> <span class="o">=</span> <span class="n">A61</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A62</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A62</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A62</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A62</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A62</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B62</span> <span class="o">=</span> <span class="n">B61</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B62</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B62</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B62</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B62</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B62</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R63 = (15)R63&quot;</span><span class="p">)</span>
+<span class="n">A63</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A62</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A63</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B63</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B62</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B63</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R64 = (3)R64&quot;</span><span class="p">)</span>
+<span class="n">A64</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A63</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A64</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B64</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B63</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B64</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R65 = baris ke-5 - baris ke-6&quot;</span><span class="p">)</span>
+<span class="n">A65</span> <span class="o">=</span> <span class="n">A64</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A65</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A65</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A65</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">A65</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A65</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B65</span> <span class="o">=</span> <span class="n">B64</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">B65</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B65</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B65</span> <span class="o">=</span> <span class="n">RowAdd</span> <span class="p">(</span><span class="n">B65</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B65</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R66 = (1/-3)R66&quot;</span><span class="p">)</span>
+<span class="n">A66</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">A65</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A66</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">B66</span> <span class="o">=</span> <span class="n">RowScale</span> <span class="p">(</span><span class="n">B65</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B66</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sehingga matriks invers yang dihasilkan yaitu :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B66</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;sehingga nilai variabel yang didapat yaitu :&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; x = 1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; y = -1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; z = 0&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; w = 0&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; u = -1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; v = 1&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pembuktian :&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;2x+y+0z+0w+0u+0v=1 = 2(1) + (-1) + 0(0) + 0(0) + 0(-1) + 0(1) = 1 &quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x+3y+z+0w+0u+0v=−2 = (1) + 3(-1) + 0 + 0 (0) + 0(-1) + 0(1) = -2&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;0x+y+2z+w+0u+0v=−1 = 0(1) + (-1) + 2(0) + 0 + 0(-1) + 0(1) = -1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;0x+0y+z+3w+u+0v=−1 = 0(1) + 0(-1) + 0 + 3(0) + (-1) + 0(1) = -1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;0x+0y+0z+w+2u+v=−1 = 0(1) + 0(-1) + 0(0) + 0 + 2(-1) + 1 = -1&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;0x+0y+0z+0w+u+3v=2 = 0(1) + 0(-1) + 0(0) + 0(0) + -1 + 3(1) = 2 &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R45 = (2)R45
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   2.   1.  -1.]
+ [  0.   0.   0.   0.   2.   6.   4.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.   0.]
+ [  0.   0.   0.   0.   0.   2.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R46 = baris ke-4 - baris ke-5
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [ -0.  -0.  -0.  -0.  -2.  -6.  -4.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.  -2.]
+ [ -0.  -0.  -0.  -0.  -0.  -2.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R47 = (-1/2)R47
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.  -2.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R48 = (30)R48
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.  30.  90.  60.]
+ [  0.   0.   0.   0.  30.  19. -11.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.  -2.]
+ [  0.   0.   0.   0.   0.  30.]
+ [  1.  -2.   5.  -8.  19.   0.]] 
+
+R49 = baris ke-6 - baris ke-5
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [ -0.  -0.  -0.  -0. -30. -90. -60.]
+ [  0.   0.   0.   0.   0. -71. -71.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.  -2.]
+ [ -0.  -0.  -0.  -0.  -0. -30.]
+ [  1.  -2.   5.  -8.  19. -30.]] 
+
+R50 = (-1/30)R50
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.   0. -71. -71.]] 
+
+[[  0.   1.  -3.   5. -12.  19.]
+ [  0.   0.   1.  -2.   5.  -8.]
+ [  0.   0.   0.   1.  -3.   5.]
+ [  0.   0.   0.   0.   1.  -2.]
+ [  0.   0.   0.   0.   0.   1.]
+ [  1.  -2.   5.  -8.  19. -30.]] 
+
+R51 = (-1/71)R51
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [ -0.  -0.  -0.  -0.  -0.   1.   1.]] 
+
+[[ 0.00000000e+00  1.00000000e+00 -3.00000000e+00  5.00000000e+00
+  -1.20000000e+01  1.90000000e+01]
+ [ 0.00000000e+00  0.00000000e+00  1.00000000e+00 -2.00000000e+00
+   5.00000000e+00 -8.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00
+  -3.00000000e+00  5.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   1.00000000e+00 -2.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   0.00000000e+00  1.00000000e+00]
+ [-1.40845070e-02  2.81690141e-02 -7.04225352e-02  1.12676056e-01
+  -2.67605634e-01  4.22535211e-01]] 
+
+R52 = (45)R52
+[[  1.   0.   0.   0.   0.  45.  46.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [ -0.  -0.  -0.  -0.  -0.  45.  45.]] 
+
+[[  0.           1.          -3.           5.         -12.
+   19.        ]
+ [  0.           0.           1.          -2.           5.
+   -8.        ]
+ [  0.           0.           0.           1.          -3.
+    5.        ]
+ [  0.           0.           0.           0.           1.
+   -2.        ]
+ [  0.           0.           0.           0.           0.
+    1.        ]
+ [ -0.63380282   1.26760563  -3.16901408   5.07042254 -12.04225352
+   19.01408451]] 
+
+R53 = baris ke-1 - baris ke-6
+[[  1.   0.   0.   0.   0.   0.   1.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.   0. -45. -45.]] 
+
+[[ 6.33802817e-01 -2.67605634e-01  1.69014085e-01 -7.04225352e-02
+   4.22535211e-02 -1.40845070e-02]
+ [ 0.00000000e+00  0.00000000e+00  1.00000000e+00 -2.00000000e+00
+   5.00000000e+00 -8.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00
+  -3.00000000e+00  5.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   1.00000000e+00 -2.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   0.00000000e+00  1.00000000e+00]
+ [ 6.33802817e-01 -1.26760563e+00  3.16901408e+00 -5.07042254e+00
+   1.20422535e+01 -1.90140845e+01]] 
+
+R54 = (1/-45)R54
+[[  1.   0.   0.   0.   0.   0.   1.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [ -0.  -0.  -0.  -0.  -0.   1.   1.]] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [ 0.          0.          1.         -2.          5.         -8.        ]
+ [ 0.          0.          0.          1.         -3.          5.        ]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+R55 = (-19)R55
+[[  1.   0.   0.   0.   0.   0.   1.]
+ [  0.   1.   0.   0.   0. -19. -20.]
+ [  0.   0.   1.   0.   0.  12.  12.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.   0. -19. -19.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [ 0.          0.          1.         -2.          5.         -8.        ]
+ [ 0.          0.          0.          1.         -3.          5.        ]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [ 0.26760563 -0.53521127  1.33802817 -2.14084507  5.08450704 -8.02816901]] 
+
+R56 = baris ke-2 - baris ke-6
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0. 12. 12.]
+ [ 0.  0.  0.  1.  0. -5. -5.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0. 19. 19.]] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.          0.          0.          1.         -3.          5.        ]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.26760563  0.53521127 -1.33802817  2.14084507 -5.08450704  8.02816901]] 
+
+R57 = (1/19)R57
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0. 12. 12.]
+ [ 0.  0.  0.  1.  0. -5. -5.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0.  1.  1.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.          0.          0.          1.         -3.          5.        ]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+R58 = (12)R58
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0. 12. 12.]
+ [ 0.  0.  0.  1.  0. -5. -5.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0. 12. 12.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.          0.          0.          1.         -3.          5.        ]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.16901408  0.33802817 -0.84507042  1.35211268 -3.21126761  5.07042254]] 
+
+R59 = baris ke-3 - baris ke-6
+[[  1.   0.   0.   0.   0.   0.   1.]
+ [  0.   1.   0.   0.   0.   0.  -1.]
+ [  0.   0.   1.   0.   0.   0.   0.]
+ [  0.   0.   0.   1.   0.  -5.  -5.]
+ [  0.   0.   0.   0.   1.   3.   2.]
+ [  0.   0.   0.   0.   0. -12. -12.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [ 0.16901408 -0.33802817  0.84507042 -1.35211268  3.21126761 -5.07042254]] 
+
+R60 = (1/-12)R60
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0. -5. -5.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0.  1.  1.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+R61 = (-5)R61
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0. -5. -5.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [ 0.  0.  0.  0.  0. -5. -5.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [ 0.          0.          0.          0.          1.         -2.        ]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [ 0.07042254 -0.14084507  0.35211268 -0.56338028  1.33802817 -2.11267606]] 
+
+R62 = baris ke-4 - baris ke-6
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0.  5.  5.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -1.33802817  2.11267606]] 
+
+R63 = (15)R63
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0.  1.  1.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+R64 = (3)R64
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  3.  2.]
+ [-0. -0. -0. -0. -0.  3.  3.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.          0.          0.          0.          0.          1.        ]
+ [-0.04225352  0.08450704 -0.21126761  0.33802817 -0.8028169   1.26760563]] 
+
+R65 = baris ke-5 - baris ke-6
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0. -1.]
+ [ 0.  0.  0.  0.  0. -3. -3.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.04225352 -0.08450704  0.21126761 -0.33802817  0.8028169  -0.26760563]
+ [ 0.04225352 -0.08450704  0.21126761 -0.33802817  0.8028169  -1.26760563]] 
+
+R66 = (1/-3)R66
+[[ 1.  0.  0.  0.  0.  0.  1.]
+ [ 0.  1.  0.  0.  0.  0. -1.]
+ [ 0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0. -1.]
+ [-0. -0. -0. -0. -0.  1.  1.]] 
+
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.04225352 -0.08450704  0.21126761 -0.33802817  0.8028169  -0.26760563]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+Sehingga matriks invers yang dihasilkan yaitu :
+[[ 0.63380282 -0.26760563  0.16901408 -0.07042254  0.04225352 -0.01408451]
+ [-0.26760563  0.53521127 -0.33802817  0.14084507 -0.08450704  0.02816901]
+ [ 0.16901408 -0.33802817  0.84507042 -0.35211268  0.21126761 -0.07042254]
+ [-0.07042254  0.14084507 -0.35211268  0.56338028 -0.33802817  0.11267606]
+ [ 0.04225352 -0.08450704  0.21126761 -0.33802817  0.8028169  -0.26760563]
+ [-0.01408451  0.02816901 -0.07042254  0.11267606 -0.26760563  0.42253521]] 
+
+sehingga nilai variabel yang didapat yaitu :
+ x = 1
+ y = -1
+ z = 0
+ w = 0
+ u = -1
+ v = 1
+Pembuktian :
+2x+y+0z+0w+0u+0v=1 = 2(1) + (-1) + 0(0) + 0(0) + 0(-1) + 0(1) = 1 
+x+3y+z+0w+0u+0v=−2 = (1) + 3(-1) + 0 + 0 (0) + 0(-1) + 0(1) = -2
+0x+y+2z+w+0u+0v=−1 = 0(1) + (-1) + 2(0) + 0 + 0(-1) + 0(1) = -1
+0x+0y+z+3w+u+0v=−1 = 0(1) + 0(-1) + 0 + 3(0) + (-1) + 0(1) = -1
+0x+0y+0z+w+2u+v=−1 = 0(1) + 0(-1) + 0(0) + 0 + 2(-1) + 1 = -1
+0x+0y+0z+0w+u+3v=2 = 0(1) + 0(-1) + 0(0) + 0(0) + -1 + 3(1) = 2 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuktikan-bahwa-jika-matriks-a-dikalikan-dengan-invers-matriks-a-akan-menghasilkan-matriks-identitas">
+<h3>Membuktikan bahwa “Jika matriks A dikalikan dengan invers matriks A akan menghasilkan matriks identitas”<a class="headerlink" href="#membuktikan-bahwa-jika-matriks-a-dikalikan-dengan-invers-matriks-a-akan-menghasilkan-matriks-identitas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1420,6 +3044,7 @@ Terbukti bahwa matriks A dikalikan dengan invers matriks A akan menghasilkan mat
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -1480,7 +3105,12 @@ Terbukti bahwa matriks A dikalikan dengan invers matriks A akan menghasilkan mat
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat Matriks Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan-elimination">Mencari Invers Dengan Eliminasi Gauss Jordan Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-eliminasi-persamaan-linier">Solusi Eliminasi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-matriks-invers-dengan-ordo-6x6-mengguanakan-code-program">Menentukan matriks invers dengan ordo 6x6 mengguanakan code program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-matriks-invers-dengan-menerapkan-rowscale-rowadd-dan-rowswap">Menentukan matriks invers dengan menerapkan RowScale, RowAdd, dan RowSwap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuktikan-bahwa-jika-matriks-a-dikalikan-dengan-invers-matriks-a-akan-menghasilkan-matriks-identitas">Membuktikan bahwa “Jika matriks A dikalikan dengan invers matriks A akan menghasilkan matriks identitas”</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
