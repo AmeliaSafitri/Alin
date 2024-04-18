@@ -1,9 +1,12 @@
-# Selamat Datang di Notebook Amelia Safitri 23-039
+# Welcome to Amelia's Jupyter Book
 
-Ini adalah notebook AMELIA SAFITRI dengan NIM : 230411100039
+# NIM : 230411100039
 
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Ini adalah Jupyter Book Amelia yang berisi tentang materi Komputasi Aljabar Linier Semester 2
+
+Semoga materi ini dapat bermanfaat bagi para pembaca
+
+Kunjungi link berikut untuk dokumentasi Jupyter notebook [the Jupyter Book documentation](https://jupyterbook.org) untuk informasi lebih lanjut.
 
 Check out the content pages bundled with this sample book to see more.
 
