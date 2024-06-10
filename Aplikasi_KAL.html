@@ -184,6 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Eigenvalues_Eigenvectors.html">Eigenvalues dan Eigenvectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformasi.html">Transformasi Linier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pagerank</a></li>
+
 </ul>
 
     </div>
@@ -379,9 +380,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pagerank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-konvergen">Perkalian matriks konvergen</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma">Algoritma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-untuk-menghitung-pagerank-gunakan-error-toleransi">Komputasi untuk menghitung pagerank (Gunakan error toleransi)</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -493,6 +499,9 @@ A x (Av)=
 </div>
 </div>
 </div>
+</section>
+<section id="perkalian-matriks-konvergen">
+<h1>Perkalian matriks konvergen<a class="headerlink" href="#perkalian-matriks-konvergen" title="Link to this heading">#</a></h1>
 <p>previous_result = matriks v</p>
 <p>result = matriks A x previous_result</p>
 <p>tolerance = 0.01</p>
@@ -586,97 +595,14 @@ Perkalian matriks konvergen pada iterasi ke-7.
 <p>C(T1) adalah jumlah link keluar (outbound link) pada halaman T1 (yang dimaksud adalah jumlah link keluar dari backlink yang mengarah ke situs A)</p>
 <p>d adalah damping factor yang bisa diberi antara 0 dan 1</p>
 <p>N adalah jumlah keseluruhan halaman web yang terindeks oleh Google</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">calculate_pagerank</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">damping_factor</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">convergence_threshold</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
-    <span class="n">n_pages</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_pages</span><span class="p">,</span> <span class="n">n_pages</span><span class="p">))</span>
-
-    <span class="c1"># Membangun matriks transisi</span>
-    <span class="k">for</span> <span class="n">page</span><span class="p">,</span> <span class="n">outbound_links</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">outbound_links</span><span class="p">:</span>
-            <span class="c1"># Distribusi seragam jika tidak ada tautan keluar</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pages</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_pages</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Setiap tautan keluar mendapat bagian yang sama dari pentingnya halaman</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">page</span><span class="p">,</span> <span class="n">outbound_links</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">outbound_links</span><span class="p">)</span>
-
-    <span class="c1"># Menghitung matriks transisi dengan faktor damping</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">damping_factor</span> <span class="o">*</span> <span class="n">M</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">damping_factor</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_pages</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n_pages</span><span class="p">,</span> <span class="n">n_pages</span><span class="p">))</span>
-
-    <span class="c1"># Inisialisasi vektor peringkat</span>
-    <span class="n">pagerank_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pages</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_pages</span>
-
-    <span class="c1"># Iterasi hingga konvergensi</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">new_pagerank_vector</span> <span class="o">=</span> <span class="n">M</span> <span class="o">@</span> <span class="n">pagerank_vector</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">new_pagerank_vector</span> <span class="o">-</span> <span class="n">pagerank_vector</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">convergence_threshold</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="n">pagerank_vector</span> <span class="o">=</span> <span class="n">new_pagerank_vector</span>
-
-    <span class="k">return</span> <span class="n">pagerank_vector</span>
-
-<span class="c1"># Contoh penggunaan</span>
-<span class="n">links_example</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1"># Halaman 0 memiliki tautan ke halaman 1 dan 2</span>
-    <span class="p">[</span><span class="mi">2</span><span class="p">],</span>     <span class="c1"># Halaman 1 memiliki tautan ke halaman 2</span>
-    <span class="p">[</span><span class="mi">0</span><span class="p">]</span>      <span class="c1"># Halaman 2 memiliki tautan ke halaman 0</span>
-<span class="p">]</span>
-
-<span class="n">pagerank_scores</span> <span class="o">=</span> <span class="n">calculate_pagerank</span><span class="p">(</span><span class="n">links_example</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pagerank_scores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.33333333 0.33333333 0.33333333]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dalam contoh ini, links adalah daftar yang berisi daftar indeks halaman yang ditautkan oleh setiap halaman. Fungsi calculate_pagerank akan menghitung skor PageRank untuk setiap halaman berdasarkan struktur tautan yang diberikan. damping_factor adalah faktor damping ( d ), dan convergence_threshold adalah nilai ambang batas untuk menentukan konvergensi algoritma.</p>
-<p>Kode ini akan menghasilkan vektor skor PageRank yang menunjukkan pentingnya relatif setiap halaman dalam daftar links.</p>
 </section>
 <section id="komputasi-untuk-menghitung-pagerank-gunakan-error-toleransi">
 <h2>Komputasi untuk menghitung pagerank (Gunakan error toleransi)<a class="headerlink" href="#komputasi-untuk-menghitung-pagerank-gunakan-error-toleransi" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">pagerank</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;PageRank: The calculation of ranked web pages.&quot;&quot;&quot;</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">M_hat</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">M</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
-        <span class="n">v_prev</span> <span class="o">=</span> <span class="n">v</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">M_hat</span> <span class="o">@</span> <span class="n">v</span>
-        <span class="c1"># Periksa error toleransi</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">v_prev</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-5</span><span class="p">:</span>
-            <span class="k">break</span>
-    <span class="k">return</span> <span class="n">v</span>
-
-<span class="c1"># Contoh matriks M</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">pagerank</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.33333185]
- [0.33333626]
- [0.3333319 ]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dalam kode ini, M adalah matriks transisi, num_iterations adalah jumlah iterasi maksimum, dan d adalah faktor damping yang biasanya diatur ke 0.85. Fungsi pagerank menghitung vektor peringkat halaman, dan loop iterasi akan berhenti jika perbedaan antara vektor peringkat pada iterasi berturut-turut kurang dari error toleransi yang ditentukan (dalam hal ini, 1e-5). 1e-5 adalah notasi ilmiah yang menggambarkan 0.00001 dalam bentuk bilangan desimal. Dalam matematika dan ilmu komputer, notasi ini digunakan untuk menyatakan angka yang sangat kecil atau mendekati nol. Dalam konteks algoritma PageRank yang sebelumnya saya berikan, 1e-5 digunakan sebagai error toleransi. Artinya, iterasi akan berhenti ketika perbedaan antara vektor peringkat pada iterasi berturut-turut kurang dari 0.00001</p>
+<ol class="arabic simple">
+<li><p>Toleransi kesalahan mengacu pada sejauh mana algoritma dapat mengatasi ketidakpastian dalam perhitungan.</p></li>
+<li><p>Dalam konteks PageRank, toleransi kesalahan dapat diterapkan dengan membatasi jumlah iterasi atau menghentikan iterasi ketika perubahan skor PageRank sudah cukup kecil.</p></li>
+<li><p>Dengan memperkenalkan toleransi kesalahan, kita dapat mengurangi waktu komputasi dan memori yang dibutuhkan.</p></li>
+</ol>
 </section>
 </section>
 
@@ -735,9 +661,14 @@ Perkalian matriks konvergen pada iterasi ke-7.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pagerank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-konvergen">Perkalian matriks konvergen</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma">Algoritma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-untuk-menghitung-pagerank-gunakan-error-toleransi">Komputasi untuk menghitung pagerank (Gunakan error toleransi)</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
