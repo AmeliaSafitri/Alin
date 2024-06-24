@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Aplikasi_KAL';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UAS" href="UAS.html" />
     <link rel="prev" title="Transformasi Linier" href="Transformasi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,6 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Eigenvalues_Eigenvectors.html">Eigenvalues dan Eigenvectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformasi.html">Transformasi Linier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pagerank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS.html">UAS</a></li>
 </ul>
 
     </div>
@@ -572,6 +574,119 @@ Perkalian matriks konvergen pada iterasi ke-7.
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">]])</span>
+
+<span class="n">previous_result</span> <span class="o">=</span> <span class="n">v</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># List untuk menyimpan hasil PageRank dari setiap iterasi</span>
+<span class="n">pagerank_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">previous_result</span>
+    <span class="n">pagerank_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">previous_result</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">result</span> <span class="o">-</span> <span class="n">previous_result</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Perkalian matriks konvergen pada iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="n">previous_result</span> <span class="o">=</span> <span class="n">result</span>
+
+<span class="c1"># Setelah loop selesai, mengurutkan hasil PageRank dari tertinggi ke terendah</span>
+<span class="n">final_pageranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pagerank_results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Mengambil hasil dari iterasi terakhir</span>
+<span class="n">sorted_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">final_pageranks</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Mengurutkan indeks dari nilai tertinggi ke terendah</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil PageRank setelah konvergensi (dari tertinggi ke terendah):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_indices</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank </span><span class="si">{</span><span class="n">rank</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Node </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> dengan nilai </span><span class="si">{</span><span class="n">final_pageranks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterasi ke-1:
+Node 1: 0.3666666666666667
+Node 2: 0.13333333333333333
+Node 3: 0.16666666666666669
+Node 4: 0.26666666666666666
+Node 5: 0.06666666666666667
+
+Iterasi ke-2:
+Node 1: 0.32222222222222224
+Node 2: 0.1111111111111111
+Node 3: 0.08888888888888889
+Node 4: 0.3888888888888889
+Node 5: 0.08888888888888888
+
+Iterasi ke-3:
+Node 1: 0.2740740740740741
+Node 2: 0.15925925925925924
+Node 3: 0.08518518518518518
+Node 4: 0.35185185185185186
+Node 5: 0.12962962962962962
+
+Iterasi ke-4:
+Node 1: 0.2820987654320988
+Node 2: 0.16049382716049382
+Node 3: 0.1228395061728395
+Node 4: 0.3172839506172839
+Node 5: 0.11728395061728394
+
+Iterasi ke-5:
+Node 1: 0.3088477366255144
+Node 2: 0.1448559670781893
+Node 3: 0.11934156378600823
+Node 4: 0.3211934156378601
+Node 5: 0.10576131687242797
+
+Iterasi ke-6:
+Node 1: 0.29883401920438957
+Node 2: 0.142318244170096
+Node 3: 0.10768175582990397
+Node 4: 0.34410150891632374
+Node 5: 0.1070644718792867
+
+Iterasi ke-7:
+Node 1: 0.2935413808870599
+Node 2: 0.15038866026520348
+Node 3: 0.10684727937814356
+Node 4: 0.3345221764974851
+Node 5: 0.1147005029721079
+
+Iterasi ke-8:
+Node 1: 0.29354900167657366
+Node 2: 0.149740893156531
+Node 3: 0.11342783112330437
+Node 4: 0.3317748818777625
+Node 5: 0.11150739216582836
+
+
+Perkalian matriks konvergen pada iterasi ke-8.
+
+Hasil PageRank setelah konvergensi (dari tertinggi ke terendah):
+Rank 1: Node 4 dengan nilai 0.3317748818777625
+Rank 2: Node 1 dengan nilai 0.29354900167657366
+Rank 3: Node 2 dengan nilai 0.149740893156531
+Rank 4: Node 3 dengan nilai 0.11342783112330437
+Rank 5: Node 5 dengan nilai 0.11150739216582836
+</pre></div>
+</div>
+</div>
+</div>
 <section id="algoritma">
 <h3>Algoritma<a class="headerlink" href="#algoritma" title="Link to this heading">#</a></h3>
 <p>Berikut adalah langkah-langkah dasar dari algoritma PageRank:</p>
@@ -641,6 +756,15 @@ Perkalian matriks konvergen pada iterasi ke-7.
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Transformasi Linier</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="UAS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UAS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
